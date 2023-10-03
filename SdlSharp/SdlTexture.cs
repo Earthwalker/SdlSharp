@@ -21,7 +21,7 @@ namespace SdlSharp
         /// <summary>
         /// The renderer.
         /// </summary>
-        private readonly IRenderer renderer;
+        private readonly SdlRenderer renderer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SdlTexture" /> class.
@@ -87,9 +87,9 @@ namespace SdlSharp
         /// <param name="center">The center point to draw and rotate around. Null for the same as position.</param>
         public void Draw(double[] position, double[] rotation, double[] scale, int[] center)
         {
-            var trueScale = Vector(scale.X() - ((Math.Cos(rotation.Z().ToRadians()) - Math.Sin(rotation.X().ToRadians())) * Math.Cos(rotation.Y().ToRadians())),
-                                   scale.Y() - ((Math.Cos(rotation.X().ToRadians()) - Math.Sin(rotation.Z().ToRadians()) ) * Math.Cos(rotation.Y().ToRadians())));
-
+            //var trueScale = Vector(scale.X() - ((Math.Cos(rotation.Z().ToRadians()) - Math.Sin(rotation.X().ToRadians())) * Math.Cos(rotation.Y().ToRadians())),
+            //                       scale.Y() - ((Math.Cos(rotation.X().ToRadians()) - Math.Sin(rotation.Z().ToRadians()) ) * Math.Cos(rotation.Y().ToRadians())));
+            var trueScale = scale;
             var drawPosition = Vector(position.X() - (trueScale.X() * center.X()),
                                       position.Y() - (trueScale.Y() * center.Y()));
 

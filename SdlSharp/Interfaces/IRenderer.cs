@@ -14,14 +14,6 @@ namespace SdlSharp.Interfaces
     public interface IRenderer : IDisposable
     {
         /// <summary>
-        /// Gets the sdl handle.
-        /// </summary>
-        /// <value>
-        /// The sdl handle.
-        /// </value>
-        IntPtr Handle { get; }
-
-        /// <summary>
         /// Clears this instance.
         /// </summary>
         void Clear();
