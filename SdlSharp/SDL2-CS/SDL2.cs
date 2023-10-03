@@ -114,7 +114,6 @@ namespace SDL2
 
 		#region SDL.h
 
-        /*
 		public const uint SDL_INIT_TIMER =		0x00000001;
 		public const uint SDL_INIT_AUDIO =		0x00000010;
 		public const uint SDL_INIT_VIDEO =		0x00000020;
@@ -126,23 +125,7 @@ namespace SDL2
 			SDL_INIT_TIMER | SDL_INIT_AUDIO | SDL_INIT_VIDEO |
 			SDL_INIT_JOYSTICK | SDL_INIT_HAPTIC |
 			SDL_INIT_GAMECONTROLLER
-		);*/
-
-        [Flags]
-        public enum SDL_Init_Flags : uint
-        {
-            SDL_INIT_TIMER = 0x00000001,
-            SDL_INIT_AUDIO = 0x00000010,
-            SDL_INIT_VIDEO = 0x00000020,
-            SDL_INIT_JOYSTICK = 0x00000200,
-            SDL_INIT_HAPTIC = 0x00001000,
-            SDL_INIT_GAMECONTROLLER = 0x00002000,
-            SDL_INIT_NOPARACHUTE = 0x00100000,
-            SDL_INIT_EVERYTHING = (
-            SDL_INIT_TIMER | SDL_INIT_AUDIO | SDL_INIT_VIDEO |
-            SDL_INIT_JOYSTICK | SDL_INIT_HAPTIC |
-            SDL_INIT_GAMECONTROLLER)
-        }
+		);
 
 		/// <summary>
 		/// Use this function to initialize the SDL library.
@@ -156,7 +139,7 @@ namespace SDL2
 		/// <remarks>Unless the SDL_INIT_NOPARACHUTE flag is set, it will install cleanup signal handlers
 		/// for some commonly ignored fatal signals (like SIGSEGV). </remarks>
 		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_Init(SDL_Init_Flags flags);
+		public static extern int SDL_Init(uint flags);
 
 		/// <summary>
 		/// Use this function to initialize specific SDL subsystems.
@@ -169,7 +152,7 @@ namespace SDL2
 		/// <remarks>If you want to initialize subsystems separately you would call <see cref="SDL_Init(0)"/>
 		/// followed by <see cref="SDL_InitSubSystem()"/> with the desired subsystem flag. </remarks>
 		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_InitSubSystem(SDL_Init_Flags flags);
+		public static extern int SDL_InitSubSystem(uint flags);
 
 		/// <summary>
 		/// Use this function to clean up all initialized subsystems.
@@ -197,7 +180,7 @@ namespace SDL2
 		/// <remarks>You can use this function with atexit() to en
 		/// <remarks>You still need to call <see cref="SDL_Quit()"/> even if you close all open subsystems with SDL_QuitSubSystem(). </remarks>
 		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern void SDL_QuitSubSystem(SDL_Init_Flags flags);
+		public static extern void SDL_QuitSubSystem(uint flags);
 
 		/// <summary>
 		/// Use this function to return a mask of the specified subsystems which have previously been initialized.
@@ -206,7 +189,7 @@ namespace SDL2
 		/// <returns>If flags is 0 it returns a mask of all initialized subsystems, otherwise it returns the
 		/// initialization status of the specified subsystems. The return value does not include SDL_INIT_NOPARACHUTE.</returns>
 		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern uint SDL_WasInit(SDL_Init_Flags flags);
+		public static extern uint SDL_WasInit(uint flags);
 
 		#endregion
 

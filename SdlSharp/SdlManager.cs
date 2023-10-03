@@ -42,7 +42,7 @@ namespace SdlSharp
         /// Initializes a new instance of the <see cref="SdlManager" /> class.
         /// </summary>
         /// <param name="flags">The flags.</param>
-        public SdlManager(SDL.SDL_Init_Flags flags)
+        public SdlManager(uint flags)
         {
             SDL.SDL_Init(flags);
         }
