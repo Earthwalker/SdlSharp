@@ -21,7 +21,7 @@ namespace SdlSharp
         /// <returns>
         /// The new vector.
         /// </returns>
-        internal static double[] Vector(params double[] values)
+        public static double[] Vector(params double[] values)
         {
             return values;
         }
@@ -33,7 +33,7 @@ namespace SdlSharp
         /// <returns>
         /// The new vector.
         /// </returns>
-        internal static int[] VectorInt(params int[] values)
+        public static int[] VectorInt(params int[] values)
         {
             return values;
         }
@@ -43,7 +43,7 @@ namespace SdlSharp
         /// </summary>
         /// <param name="vector">The vector.</param>
         /// <returns>The X component.</returns>
-        internal static double X(this double[] vector)
+        public static double X(this double[] vector)
         {
             if (vector?.Length > 0)
                 return vector[0];
@@ -56,7 +56,7 @@ namespace SdlSharp
         /// </summary>
         /// <param name="vector">The vector.</param>
         /// <returns>The X component.</returns>
-        internal static int X(this int[] vector)
+        public static int X(this int[] vector)
         {
             if (vector?.Length > 0)
                 return vector[0];
@@ -69,7 +69,7 @@ namespace SdlSharp
         /// </summary>
         /// <param name="vector">The vector.</param>
         /// <returns>The Y component.</returns>
-        internal static double Y(this double[] vector)
+        public static double Y(this double[] vector)
         {
             if (vector?.Length > 1)
                 return vector[1];
@@ -82,7 +82,7 @@ namespace SdlSharp
         /// </summary>
         /// <param name="vector">The vector.</param>
         /// <returns>The Y component.</returns>
-        internal static int Y(this int[] vector)
+        public static int Y(this int[] vector)
         {
             if (vector?.Length > 1)
                 return vector[1];
@@ -95,7 +95,7 @@ namespace SdlSharp
         /// </summary>
         /// <param name="vector">The vector.</param>
         /// <returns>The Z component.</returns>
-        internal static double Z(this double[] vector)
+        public static double Z(this double[] vector)
         {
             if (vector?.Length > 1)
                 return vector[2];
@@ -108,7 +108,7 @@ namespace SdlSharp
         /// </summary>
         /// <param name="vector">The vector.</param>
         /// <returns>The Z component.</returns>
-        internal static int Z(this int[] vector)
+        public static int Z(this int[] vector)
         {
             if (vector?.Length > 1)
                 return vector[2];
